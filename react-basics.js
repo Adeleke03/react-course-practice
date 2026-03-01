@@ -1,4 +1,6 @@
-const productCost = 10 + 8 + 8;
+const productCost = 'A';
+const shippingCost = 'B';
+const totalCost = 'C';
 
 console.log(productCost);
 
