@@ -13,28 +13,42 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      const today = dayjs().format('MMMM D');
-
-  console.log(today);
-  
-
-      const div = (
-        <div>
-          <button>  Good job!</button>
-          <p>My name is Adeyemi</p>
-          <p>Cotton socks</p>
-          <p>Price: $10</p>
-          <button>Add to Cart</button>
-          <p>Product cost: $ {productCost}</p>
-          <p>Shipping cost: $ {shippingCost}</p>
-          <p>Total cost: $ {totalCost}</p>
-          <button>Place your order</button>
-          <p>Today is {today}</p>
-          </div>
-        ) 
+       const container = document.querySelector('.js-container');
+        const root = ReactDOM.createRoot(container);
+      function renderApp() {
         
-      const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(div);
+        const today = dayjs().format('MMMM D');
+        const currentTime = dayjs().format('HH:mm:ss');
+  
+    // console.log(today);
+    
+  
+        const div = (
+          <div>
+            <button>  Good job!</button>
+            <p>My name is Adeyemi</p>
+            <p>Cotton socks</p>
+            <p>Price: $10</p>
+            <button>Add to Cart</button>
+            <p>Product cost: $ {productCost}</p>
+            <p>Shipping cost: $ {shippingCost}</p>
+            <p>Total cost: $ {totalCost}</p>
+            <button>Place your order</button>
+            <p>Today is {today}</p>
+            <p>Current time: {currentTime}</p>
+            </div>
+          ) 
+          
+       
+        root.render(div);
+
+      }
+ 
+  renderApp();
+
+
+  setInterval(renderApp, 1000);
+
     </script>
   </body>
 </html>
